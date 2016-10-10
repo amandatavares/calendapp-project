@@ -1,3 +1,14 @@
+// $(document).ready(function(){
+myApp.onPageInit('categories',function(page){
+  console.log('aqui');
+  voltar=function(){
+    mainView.router.loadPage('index.html');
+  }
+  $('.btn_voltar').click(function(){
+    voltar();
+  });
+});
+// });
 // myApp.onPageInit('categories',function(page){
 //
 //   Vue.Categories = new Vue({

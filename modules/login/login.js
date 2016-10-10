@@ -1,10 +1,11 @@
 jQuery.support.cors = true;
-$(document).ready(function(){
-
+// $(document).ready(function(){ index
+myApp.onPageInit('index',function(page){
+console.log('login');
   login=function(){
     $.ajax({
       type:"POST",
-      url:"http://192.168.100.7:8000/usuario/logar",
+      url:"http://api-calendapp.herokuapp.com/usuario/logar",
       crossDomain: true,
       dataType: 'json',
       data:{
@@ -53,3 +54,46 @@ $(document).ready(function(){
     logout();
   });
 });
+//nao apagar codigo abaixo
+console.log('login');
+  login=function(){
+    $.ajax({
+      type:"POST",
+      url:"http://api-calendapp.herokuapp.com/usuario/logar",
+      crossDomain: true,
+      dataType: 'json',
+      data:{
+        matricula: $('#matricula').val(),
+        password: $('#password').val()
+      },
+      beforeSend:function(){
+        myApp.showPreloader();
+      },
+      success:function(e){
+        if(e.logado==true){
+          myApp.closeModal();
+          localStorage.setItem('logado',true);
+          localStorage.setItem('aluno',e.aluno[0]);
+
+        }else{
+          myApp.alert('Login inválido','Aviso');
+        }
+        myApp.hidePreloader();
+      },
+      error:function(){
+        myApp.hidePreloader();
+      }
+    });
+  };
+  logout=function(){
+    localStorage.removeItem('logado');
+    localStorage.removeItem('aluno');
+    myApp.loginScreen();
+  }
+
+  $('#btn_logar').click(function(){
+    login();
+  });
+  $('#btn_sair').click(function(){
+    logout();
+  });

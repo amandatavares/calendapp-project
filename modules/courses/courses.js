@@ -1,55 +1,24 @@
 jQuery.support.cors = true;
+myApp.onPageInit('courses',function(page){
 $(document).ready(function(){
-// Modifique o resto! Falta coisa!
-  course=function(){
+  console.log('course');
     $.ajax({
-      type:"POST",
-      url:"http://192.168.100.7:8000/disciplina/create",
-      crossDomain: true,
-      dataType: 'json',
-      data:{
-        nome: $('#nome').val(),
-        professor: $('#professor').val()
-      },
+    "async": true,
+    "crossDomain": true,
+    // contentType: "application/json;",
+    "url": "http://192.168.25.158:8000/disciplina/",
+    "method": "POST",
       beforeSend:function(){
         myApp.showPreloader();
       },
-      success:function(e){
-        //verifico se o login está ok
-        if(e.logado==true){
-          //login ok, derrubo a tela de login
-          myApp.closeModal();
-          //seto no armazenamento local a indicação que está logado
-          localStorage.setItem('logado',true);
-          //seto no arm. local os dados do aluno caso queira usar.
-          localStorage.setItem('aluno',e.aluno[0]);
-
-          //para usar os dados em localStorage fazer como o exemplo abaixo
-          /*
-            localStorage.logado
-            com isso você tem acesso em qualquer lugar da página aos dados.
-          */
-
-        }else{
-          myApp.alert('Login inválido','Aviso');
-        }
+      complete:function(){
         myApp.hidePreloader();
+        $('.list-course').empty().
+        append('<li>Meu nome aqui</li>');
       },
-      error:function(){
-        myApp.hidePreloader();
+      success:function(e){
+        console.log(e);
       }
     });
-  };
-  logout=function(){
-    localStorage.removeItem('logado');
-    localStorage.removeItem('aluno');
-    myApp.loginScreen();
-  }
-
-  $('#btn_logar').click(function(){
-    login();
-  });
-  $('#btn_sair').click(function(){
-    logout();
-  });
+});
 });
