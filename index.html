@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html ng-app="sigepos">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <title>CalendApp</title>
+    <link rel="stylesheet" href="css/framework7.material.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.css">
+    <link rel="stylesheet" href="css/kitchen-sink.css">
+    <link rel="stylesheet" href="css/fonts.googleapis.css">
+  </head>
+  <body class="theme-black">
+    <div class="login-screen">
+       <!-- Default view-page layout -->
+       <div class="view">
+         <div class="page">
+           <!-- page-content has additional login-screen content -->
+           <div class="page-content login-screen-content">
+             <div class="login-screen-title">CalendApp</div>
+             <!-- Login form -->
+             <form>
+               <div class="list-block">
+                 <ul>
+                   <li class="item-content">
+                     <div class="item-inner">
+                       <div class="item-input">
+                         <input type="text" name="matricula" id="matricula" placeholder="Matrícula">
+                       </div>
+                     </div>
+                   </li>
+                   <li class="item-content">
+                     <div class="item-inner">
+                       <div class="item-input">
+                         <input type="password" name="password" id="password" placeholder="Senha">
+                       </div>
+                     </div>
+                   </li>
+                 </ul>
+               </div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#" class="button button-fill button-raised color-blue" id="btn_logar">Logar</a></li>
+                </ul>
+                <div class="list-block-label">
+                  <p>Click Sign In to close Login Screen</p>
+                </div>
+              </div>
+              <a href="#" class="button">Cadastre-se</a>
+             </form>
+           </div>
+         </div>
+       </div>
+   </div>
+
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="panel panel-left panel-cover">
+      <div class="view navbar-fixed">
+        <div class="pages">
+          <div data-page="panel-left" class="page">
+            <div class="page-content">
+              <div class="content-block" style="margin-top:-20%;margin-left:30%">
+                <img src="img/ic_account_circle_black_48px.svg" width="80"><br>
+                Alcides Junior
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <a href="#" class="item close-panel">
+                      <div class="item-content">
+                        <div class="item-media">
+                          <img src="img/ic_build_black_24px.svg">
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">
+                            Ordem de serviço
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="modules/categories/categories.html" class="item close-panel">
+                      <div class="item-content">
+                        <div class="item-media">
+                          <img src="img/ic_view_list_black_24px.svg">
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">
+                            Categorias
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="item close-panel">
+                      <div class="item-content">
+                        <div class="item-media">
+                          <img src="img/ic_group_black_24px.svg">
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">
+                            Técnicos
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="item close-panel">
+                      <div class="item-content">
+                        <div class="item-media">
+                          <img src="img/ic_call_black_24px.svg">
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">
+                            Contatos
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="item close-panel">
+                      <div class="item-content">
+                        <div class="item-media">
+                          <img src="img/ic_settings_black_24px.svg">
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">
+                            Configurações
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="views">
+      <div class="view view-main">
+        <div class="pages navbar-fixed">
+          <div data-page="index" class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="left"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
+                <div class="center">Sigepos</div>
+                <div class="right"><a href="#" class="link icon-only" id="btn_sair">Sair</a></div>
+              </div>
+            </div>
+            <div class="page-content">
+              <a href="#" class="button button-fill bg-red">Botao</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <!-- <script type="text/javascript" src="js/vue.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/vue-resource.min.js"></script> -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="modules/categories/categories.js"></script>
+    <script type="text/javascript" src="modules/login/login.js"></script>
+  </body>
+</html>

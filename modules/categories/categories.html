@@ -1,0 +1,41 @@
+<div data-page="categories" class="page" id="categories">
+  <div class="navbar bg-ajat">
+    <div class="navbar-inner bg-ajat">
+      <div class="left"><a href="index.html" class="link icon-only"><i class="icon icon-back"></i></a></div>
+      <div class="center">Categorias</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content-block-title" v-if="categories.length==0">Não há categorias cadastradas.</div>
+    <div class="content-block-title" v-if="categories.length>0">Deslize para a esquerda.</div>
+    <div class="content-block" v-if="categories.length>0">
+      <div class="list-block">
+        
+        <ul>
+          <li class="swipeout swipeout-categories" v-for="category in categories">
+            <div class="swipeout-content item-content">
+              <div class="item-media">
+                <img src="img/ic_view_list_black_24px.svg">
+              </div>
+              <div class="item-inner">
+                {{@category.category_name}}
+              </div>
+            </div>
+            <div class="swipeout-actions-right">
+              <!-- Add this button and item will be deleted automatically -->
+              <a href="modules/categories/category.show.html?category_id={{category.category_id}}">
+                <img src="img/ic_remove_red_eye_black_24px.svg">
+              </a>
+              <a href="#" class="swipeout-delete" v-on:click="delete(category.category_id)" data-confirm="Deseja excluir {{category.category_name}}?" data-confirm-title="Excluir?" data-close-on-cancel="true">
+                <img src="img/ic_delete_black_24px.svg">
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="modules/categories/category.new.html" class="bg-pink floating-button button-big">
+      <img src="img/ic_add_white_36px.svg" alt="" class=""/>
+    </a>
+  </div>
+</div>

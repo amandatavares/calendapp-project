@@ -1,0 +1,39 @@
+<div data-page="category_new" class="page" id="category_new">
+  <div class="navbar bg-ajat">
+    <div class="navbar-inner bg-ajat">
+      <div class="left"><a href="modules/categories/categories.html" class="link icon-only"><i class="icon icon-back"></i></a></div>
+      <div class="center">Nova categoria</div>
+      <div class="right"><a href="#" class="link icon-only" v-on:click="addCategory(category)"><img src="img/ic_save_white_24px.svg" alt="" /></a></div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="list-block">
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">
+                <b>Categoria</b>
+              </div>
+              <div class="item-input">
+                <input type="text" v-model="category.category.category_name" autofocus>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">
+                <b>Observação</b>
+              </div>
+              <div class="item-input">
+                <textarea v-model="category.category.category_note"></textarea>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

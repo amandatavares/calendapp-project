@@ -1,0 +1,44 @@
+<div data-page="category_show" class="page" id="category_show">
+  <div class="navbar bg-ajat">
+    <div class="navbar-inner bg-ajat">
+      <div class="left"><a href="modules/categories/categories.html" class="link icon-only"><i class="icon icon-back"></i></a></div>
+      <div class="center">Categoria</div>
+      <div class="right"><a href="modules/categories/category.new.html?category_id={{category_id}}" class="link icon-only" v-on:click=""><i class="material-icons"><img src="img/ic_edit_white_24px.svg"></i></a></div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="list-block">
+      <ul>
+        <style media="screen">
+          .blockline{
+            display:table-row !important;
+          }
+        </style>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <b>Categoria</b>
+                <div class="blockline">
+                  {{category.category_name}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <b>Observação</b>
+                <div class="blockline">
+                  {{category.category_note}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
