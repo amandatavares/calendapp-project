@@ -17,6 +17,8 @@ $(document).ready(function(){
 
       },
       success:function(e){
+
+        myApp.hidePreloader();
         console.log(e);
         $('.list-course').empty();
         for (var i = 0; i < e.length; i++) {
